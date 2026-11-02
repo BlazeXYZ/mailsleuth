@@ -5,7 +5,7 @@
 **Phishing email triage for SOC analysts. Drop in an email, get a verdict you can defend.**
 
 [![tests](https://github.com/BlazeXYZ/mailsleuth/actions/workflows/tests.yml/badge.svg)](https://github.com/BlazeXYZ/mailsleuth/actions/workflows/tests.yml)
-![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue)
+![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)
 ![dependencies: none](https://img.shields.io/badge/dependencies-none-brightgreen)
 ![license: MIT](https://img.shields.io/badge/license-MIT-lightgrey)
 
@@ -77,7 +77,7 @@ python -m mailsleuth serve
 python -m mailsleuth samples/02_credential_phish.eml
 ```
 
-It requires **Python 3.9+** and nothing else. Running `pip install .` also gives you a `mailsleuth` command.
+It requires **Python 3.11+** and nothing else. Running `pip install .` also gives you a `mailsleuth` command.
 
 <details>
 <summary><b>More CLI usage</b></summary>
@@ -320,7 +320,7 @@ A phishing analyzer parses **attacker-controlled input** by definition, so it ha
 python -m unittest discover -s tests -t . -v
 ```
 
-There are **39 tests**, all built on `unittest` (no pytest, which keeps decision 1). GitHub Actions runs them on **Ubuntu and Windows × Python 3.9, 3.11 and 3.13**.
+There are **39 tests**, all built on `unittest` (no pytest, which keeps decision 1). GitHub Actions runs them on **Ubuntu and Windows × Python 3.11, 3.13 and 3.14**.
 
 | Area | Examples |
 |---|---|

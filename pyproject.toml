@@ -7,7 +7,7 @@ name = "mailsleuth"
 dynamic = ["version"]
 description = "Phishing email triage: SPF/DKIM/DMARC analysis, spoofing and lookalike-domain detection, deceptive-link checks, MITRE ATT&CK mapping and IOC export."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 license = { text = "MIT" }
 authors = [{ name = "BlazeXYZ" }]
 keywords = ["phishing", "email-security", "soc", "dmarc", "dkim", "spf", "threat-detection", "mitre-attack"]
@@ -26,8 +26,8 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/YOUR-USERNAME/mailsleuth"
-Issues = "https://github.com/YOUR-USERNAME/mailsleuth/issues"
+Homepage = "https://github.com/BlazeXYZ/mailsleuth"
+Issues = "https://github.com/BlazeXYZ/mailsleuth/issues"
 
 [project.scripts]
 mailsleuth = "mailsleuth.__main__:main"

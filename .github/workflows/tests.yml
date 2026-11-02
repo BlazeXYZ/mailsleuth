@@ -4,16 +4,23 @@ on:
   push:
   pull_request:
 
+# Least privilege: the workflow only needs to read the code.
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ${{ matrix.os }}
     strategy:
+      # Report every combination, so one broken job can't hide the others' results.
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
-        python-version: ["3.9", "3.11", "3.13"]
+        # Oldest supported, a middle version, and the newest release.
+        python-version: ["3.11", "3.13", "3.14"]
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
       - name: Run unit tests

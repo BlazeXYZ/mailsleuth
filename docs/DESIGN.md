@@ -49,7 +49,7 @@ The [README](../README.md) has the short version in one table.
 2. Explain every conclusion: no score without a named finding behind it.
 3. Keep false positives on legitimate bulk mail low.
 4. Be safe to run on hostile input and safe to hand to non-specialists.
-5. Run anywhere Python 3.9+ runs, with nothing to install.
+5. Run anywhere Python 3.11+ runs, with nothing to install.
 
 **Non-goals**
 - Replacing a secure email gateway. This is a *post-delivery* analyst tool, not an inline filter.
@@ -341,7 +341,7 @@ The **cousin-domain** check (sender vs. *recipient's* domain) uses normalization
 - **Synthetic, minimal emails built inside tests** (`email(b"From: …", b"Subject: …")`), so each test names exactly the headers it depends on.
 - **Mocked HTTP** for reputation. Tests must be deterministic, free and offline, and must never send sample URLs to real services.
 - **A real server on port 0** (an ephemeral port) for web tests, so they test the actual HTTP behavior and never clash with a running instance.
-- **CI on Ubuntu + Windows × Python 3.9/3.11/3.13.** Email parsing and path handling differ across platforms and versions (Windows path separators showed up in report output during development).
+- **CI on Ubuntu + Windows × Python 3.11/3.13/3.14, with `fail-fast: false`.** The minimum is 3.11, the oldest version still getting security fixes. The first CI run failed because Python 3.9 doesn't exist on GitHub's Ubuntu 26.04 runner image, and fail-fast cancelled the other jobs, which hid the fact that the code itself was fine. Every combination now reports independently. Email parsing and path handling differ across platforms and versions (Windows path separators showed up in report output during development).
 - **A source-hygiene test** that fails on control characters in `.py` files. See below.
 
 ---

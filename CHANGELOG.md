@@ -13,7 +13,7 @@
 - **Local drag-and-drop web UI** (`mailsleuth serve`), with built-in samples and `/?sample=` deep links for demos.
 - Garbage input is rejected instead of being scored as "legitimate".
 - VirusTotal rate-limit handling (HTTP 429).
-- GitHub Actions CI on Linux and Windows with Python 3.9, 3.11 and 3.13.
+- GitHub Actions CI on Linux and Windows with Python 3.11, 3.13 and 3.14. The minimum supported version is 3.11, because 3.9 and 3.10 are end-of-life and GitHub's Ubuntu 26.04 runners no longer provide them.
 
 ### Fixed
 - A shell edit turned the regex `\b` into a literal backspace byte, which silently disabled urgency matching. It's now covered by a positive/negative test and a control-character hygiene test.
