@@ -1,0 +1,40 @@
+Return-Path: <dana.whitfield@acmec0rp.com>
+Received: from mx.acmecorp.com (mx.acmecorp.com [192.0.2.40])
+	by mail.acmecorp.com (Postfix) with ESMTPS id 3B7C2
+	for <ap-team@acmecorp.com>; Mon, 02 Nov 2026 16:12:44 +0000
+Received: from mail.acmec0rp.com (mail.acmec0rp.com [203.0.113.99])
+	by mx.acmecorp.com (Postfix) with ESMTPS id 8D1E0
+	for <ap-team@acmecorp.com>; Mon, 02 Nov 2026 16:12:41 +0000
+Authentication-Results: mx.acmecorp.com;
+	spf=pass smtp.mailfrom=dana.whitfield@acmec0rp.com;
+	dkim=pass header.d=acmec0rp.com header.s=default;
+	dmarc=pass (p=NONE) header.from=acmec0rp.com
+DKIM-Signature: v=1; a=rsa-sha256; d=acmec0rp.com; s=default; h=from:to:subject; b=abc123
+From: Dana Whitfield <dana.whitfield@acmec0rp.com>
+Reply-To: dana.whitfield.ceo@gmail.com
+To: Accounts Payable <ap-team@acmecorp.com>
+Subject: Overdue vendor invoice - wire transfer needed today
+Date: Mon, 02 Nov 2026 16:12:35 +0000
+Message-ID: <CAF8x1@mail.acmec0rp.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="mix"
+
+--mix
+Content-Type: text/plain; charset="utf-8"
+
+Hi team,
+
+I'm in meetings all afternoon. Please process the attached invoice by wire transfer
+immediately - the vendor will pause our account otherwise. Reply to me directly
+with the confirmation, don't loop in anyone else on this.
+
+Dana
+
+--mix
+Content-Type: text/html; name="Invoice_88213.pdf.html"
+Content-Disposition: attachment; filename="Invoice_88213.pdf.html"
+Content-Transfer-Encoding: base64
+
+PGh0bWw+PGJvZHk+PGgxPkludm9pY2U8L2gxPjwvYm9keT48L2h0bWw+
+
+--mix--

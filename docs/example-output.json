@@ -1,0 +1,136 @@
+{
+  "source": "samples/03_bec_invoice.eml",
+  "verdict": "LIKELY PHISHING",
+  "score": 79,
+  "summary": "This email is very likely phishing: replies are secretly redirected to dana.whitfield.ceo@gmail.com; acmec0rp.com is a lookalike of the recipient's own domain acmecorp.com; and the attachment Invoice_88213.pdf.html disguises its real file type. It passes SPF, DKIM and DMARC, which means the attacker controls the sending domain rather than spoofing someone else's.",
+  "score_breakdown": {
+    "Sender": 50,
+    "Attachment": 25,
+    "Content": 4
+  },
+  "headers": {
+    "subject": "Overdue vendor invoice - wire transfer needed today",
+    "date": "Mon, 02 Nov 2026 16:12:35 +0000",
+    "message_id": "<CAF8x1@mail.acmec0rp.com>",
+    "from_name": "Dana Whitfield",
+    "from": "dana.whitfield@acmec0rp.com",
+    "return_path": "dana.whitfield@acmec0rp.com",
+    "reply_to": "dana.whitfield.ceo@gmail.com",
+    "sender": "",
+    "to": [
+      "ap-team@acmecorp.com"
+    ],
+    "originating_ip": "203.0.113.99",
+    "mailer": ""
+  },
+  "authentication": {
+    "authserv_id": "mx.acmecorp.com",
+    "spf": "pass",
+    "dkim": "pass",
+    "dmarc": "pass",
+    "raw": [
+      {
+        "method": "spf",
+        "result": "pass",
+        "smtp.mailfrom": "dana.whitfield@acmec0rp.com"
+      },
+      {
+        "method": "dkim",
+        "result": "pass",
+        "header.d": "acmec0rp.com",
+        "header.s": "default"
+      },
+      {
+        "method": "dmarc",
+        "result": "pass",
+        "header.from": "acmec0rp.com"
+      }
+    ],
+    "dkim_signatures": [
+      {
+        "d": "acmec0rp.com",
+        "s": "default"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "severity": "high",
+      "category": "Sender",
+      "title": "Replies redirected to a free webmail account",
+      "detail": "Reply-To is dana.whitfield.ceo@gmail.com while From is dana.whitfield@acmec0rp.com. This is a hallmark of business email compromise (BEC).",
+      "mitre": [
+        "T1566",
+        "T1585.002"
+      ]
+    },
+    {
+      "severity": "high",
+      "category": "Sender",
+      "title": "Sender domain imitates the recipient's organization",
+      "detail": "acmec0rp.com is a near-copy of acmecorp.com. Attackers register these 'cousin domains' to pose as coworkers.",
+      "mitre": [
+        "T1583.001",
+        "T1656"
+      ]
+    },
+    {
+      "severity": "high",
+      "category": "Attachment",
+      "title": "Double file extension: Invoice_88213.pdf.html",
+      "detail": "The real file type is hidden behind a harmless-looking extension.",
+      "mitre": [
+        "T1566.001",
+        "T1036.007"
+      ]
+    },
+    {
+      "severity": "low",
+      "category": "Content",
+      "title": "Urgency / pressure language",
+      "detail": "Matched: 'immediately', 'wire transfer'",
+      "mitre": []
+    }
+  ],
+  "urls": [],
+  "attachments": [
+    {
+      "filename": "Invoice_88213.pdf.html",
+      "content_type": "text/html",
+      "size": 42,
+      "sha256": "4a46abb2ec970f85f01a1c0359d0120db7c735fba2112e3c2254bcb1f0722e22"
+    }
+  ],
+  "iocs": {
+    "domains": [
+      "acmec0rp.com"
+    ],
+    "ips": [
+      "203.0.113.99"
+    ],
+    "emails": [
+      "dana.whitfield@acmec0rp.com",
+      "dana.whitfield.ceo@gmail.com"
+    ],
+    "sha256": [
+      "4a46abb2ec970f85f01a1c0359d0120db7c735fba2112e3c2254bcb1f0722e22"
+    ]
+  },
+  "received_chain": [
+    {
+      "from": "mail.acmec0rp.com",
+      "by": "mx.acmecorp.com",
+      "ip": "203.0.113.99",
+      "timestamp": "2026-11-02T16:12:41+00:00",
+      "delay_s": null
+    },
+    {
+      "from": "mx.acmecorp.com",
+      "by": "mail.acmecorp.com",
+      "ip": "192.0.2.40",
+      "timestamp": "2026-11-02T16:12:44+00:00",
+      "delay_s": 3
+    }
+  ],
+  "reputation_providers": []
+}

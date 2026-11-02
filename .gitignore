@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Generated reports (regenerate with: python -m mailsleuth samples --html reports)
+reports/
+
+# Local tooling
+.claude/
+.vscode/
+.idea/
+
+# Never commit API keys
+.env
+
+# Personal interview notes, kept out of the public repo
+STUDY_GUIDE.md

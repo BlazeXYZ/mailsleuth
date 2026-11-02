@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mailsleuth"
+dynamic = ["version"]
+description = "Phishing email triage: SPF/DKIM/DMARC analysis, spoofing and lookalike-domain detection, deceptive-link checks, MITRE ATT&CK mapping and IOC export."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "BlazeXYZ" }]
+keywords = ["phishing", "email-security", "soc", "dmarc", "dkim", "spf", "threat-detection", "mitre-attack"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Environment :: Web Environment",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Communications :: Email",
+    "Topic :: Security",
+]
+# Intentionally empty: the tool runs on the standard library alone.
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/YOUR-USERNAME/mailsleuth"
+Issues = "https://github.com/YOUR-USERNAME/mailsleuth/issues"
+
+[project.scripts]
+mailsleuth = "mailsleuth.__main__:main"
+
+[tool.setuptools]
+packages = ["mailsleuth"]
+
+[tool.setuptools.dynamic]
+# Single source of truth for the version: mailsleuth/__init__.py
+version = { attr = "mailsleuth.__version__" }
