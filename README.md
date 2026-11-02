@@ -353,6 +353,6 @@ All samples are synthetic. They use reserved documentation IP ranges ([RFC 5737]
 
 <div align="center">
 
-MIT License · Built by <b>BlazeXYZ</b> · See also: <a href="docs/DESIGN.md">Design document</a> · <a href="CHANGELOG.md">Changelog</a>
+MIT License · Built by <b>BlazeXYZ</b> · See also: <a href="docs/DESIGN.md">Design document</a> · <a href="CHANGELOG.md">Changelog</a> · Part of <a href="https://blazexyz.com">blazexyz.com</a>
 
 </div>
