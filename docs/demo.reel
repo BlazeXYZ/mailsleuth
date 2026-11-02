@@ -1,0 +1,10 @@
+# README demo. Render from the repo root:
+#   termreel render docs/demo.reel -o docs/demo.svg
+@cwd ..
+@size 100x36
+@title MailSleuth
+@prompt [bold #db94ed]~/mailsleuth[/] [#ee15ee]❯[/]
+@typing 24
+@max-lines 30
+$ python -m mailsleuth samples/03_bec_invoice.eml
+@sleep 4

@@ -110,6 +110,9 @@ python -m mailsleuth serve --port 9000 --no-browser
 
 ## Demo: three emails, three stories
 
+<p align="center"><img src="docs/demo.svg" alt="Animated terminal: MailSleuth rates the BEC invoice sample LIKELY PHISHING at 79/100 even though SPF, DKIM and DMARC pass" width="820"></p>
+<p align="center"><sub>Recorded with <a href="https://github.com/BlazeXYZ/termreel">termreel</a> from <a href="docs/demo.reel"><code>docs/demo.reel</code></a>.</sub></p>
+
 The [`samples/`](samples) folder holds three synthetic emails. Each one shows a different idea.
 
 | Sample | Scenario | Verdict | Score | What it demonstrates |
