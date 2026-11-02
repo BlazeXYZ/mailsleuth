@@ -67,7 +67,7 @@ def main(argv=None):
     else:
         if os.name == "nt":
             os.system("")  # enables ANSI escape handling in the Windows console
-        color = not args.no_color and sys.stdout.isatty()
+        color = not args.no_color and (sys.stdout.isatty() or bool(os.environ.get("FORCE_COLOR")))
         print("\n\n".join(to_terminal(r, color) for r in reports))
 
     if args.html:
